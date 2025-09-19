@@ -1,1 +1,3 @@
-print("Entry point ...")
+
+def main():
+    print("Execunting entry point")
