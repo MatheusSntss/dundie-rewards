@@ -1,0 +1,7 @@
+# Dev depedencies
+ipython>=8.0.0,<=9.5.0
+ipdb
+pudb
+
+#install project as editable
+-e .
