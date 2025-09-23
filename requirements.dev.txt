@@ -2,6 +2,6 @@
 ipython>=8.0.0,<=9.5.0
 ipdb
 pudb
-
+pytest-watch
 #install project as editable
 -e .
