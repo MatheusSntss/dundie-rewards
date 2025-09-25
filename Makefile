@@ -1,4 +1,4 @@
-.PHONY: install virtualenv ipython test watch
+.PHONY: install virtualenv ipython test watch lint
 install:
 	@.venv/bin/python3 -m pip install -e .[dev]
 
@@ -7,6 +7,9 @@ virtualenv:
 
 ipython:
 	@.venv/bin/ipython
+
+lint:
+	@.venv/bin/pflake8
 
 test:
 	@.venv/bin/pytest -vv -s
