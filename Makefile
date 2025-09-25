@@ -1,4 +1,4 @@
-.PHONY: install virtualenv ipython test watch
+.PHONY: install virtualenv ipython test watch lint fmt
 install:
 	@.venv/bin/python3 -m pip install -e .[dev]
 
@@ -7,6 +7,13 @@ virtualenv:
 
 ipython:
 	@.venv/bin/ipython
+
+lint:
+	@.venv/bin/pflake8
+
+fmt:
+	@.venv/bin/isort dundie tests integration
+	@.venv/bin/black dundie tests integration
 
 test:
 	@.venv/bin/pytest -vv -s

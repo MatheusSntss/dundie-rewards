@@ -10,7 +10,29 @@ on:
   workflow_dispatch:
     
 jobs:
+  lint:
+    strategy:
+      fail-fast: true
+      matrix: 
+        python-version: [3.12]
+        os: [ubuntu-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{matrix.python-version}}
+      - name: Install Project
+        run: pip install .[test]
+      - name: Look for style erros
+        run: pflake8
+      - name: Check for important style
+        run: isort --check --diff dundie tests integration
+      - name: Look for auto format errors
+        run: black --check --diff dundie tests integration
+
   tests:
+    needs: lint
     strategy:
       fail-fast: false
       matrix: 

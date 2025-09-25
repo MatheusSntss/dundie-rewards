@@ -1,17 +1,19 @@
-from dundie.core import load
 import argparse
+
+from dundie.core import load  # noqa
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description = "Dunder Mifflin Rewards CLI",
-        epilog= "Enjoy and use with cautions",
+        description="Dunder Mifflin Rewards CLI",
+        epilog="Enjoy and use with cautions",
     )
     parser.add_argument(
         "subcommand",
         type=str,
         help="The subcommand to run",
-        choices=("load","view","send"),
+        choices=("load", "view", "send"),
         default="help",
-        
     )
     parser.add_argument(
         "filepath",

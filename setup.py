@@ -1,6 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
+
 def read(*paths):
     """Read the contents of a text safely.
     >>>read("dundie","VERSION")
@@ -9,36 +10,37 @@ def read(*paths):
     ...
     """
     rootpath = os.path.dirname(__file__)
-    filepath = os.path.join(rootpath,*paths)
+    filepath = os.path.join(rootpath, *paths)
     with open(filepath) as file_:
         return file_.read().strip()
 
+
 def read_requirements(path):
     """return a list of requirements from a text file"""
-    return [        
+    return [
         line.strip()
         for line in read(path).split("\n")
-        if not line.startswith(("#","git+",'"',"-")) 
-        ]
+        if not line.startswith(("#", "git+", '"', "-"))
+    ]
+
 
 setup(
     name="dundie",
     version="0.1.0",
-    description = "Rewards point system for Dundie Mifflin",
+    description="Rewards point system for Dundie Mifflin",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    author = "Matheus Santos",
+    author="Matheus Santos",
     python_requires=">=3.10",
-    packages = find_packages(),
-    entry_points = {
-        "console_scripts":[
-            "dundie = dundie.__main__:main",    
+    packages=find_packages(),
+    entry_points={
+        "console_scripts": [
+            "dundie = dundie.__main__:main",
         ]
     },
     install_requires=read_requirements("requirements.txt"),
-    extras_require= {
-        "test":read_requirements("requirements.test.txt"),
-        "dev":read_requirements("requirements.dev.txt"),
-        
-    }
+    extras_require={
+        "test": read_requirements("requirements.test.txt"),
+        "dev": read_requirements("requirements.dev.txt"),
+    },
 )
