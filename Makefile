@@ -1,6 +1,6 @@
 .PHONY: install virtualenv ipython test watch lint fmt
 install:
-	@.venv/bin/python3 -m pip install -e .[dev]
+	@.venv/bin/python3 -m pip install -e .
 
 virtualenv:
 	@.venv/bin/python3 -m venv .venv
