@@ -1,0 +1,58 @@
+{
+    "people": {
+        "jimhelpert@dundlermifflin.com": {
+            "name": "Jim Helpert",
+            "dept": "Sales",
+            "role": "Salesman"
+        },
+        "schurute@dundlermifflin.com": {
+            "name": "Dwigth Schurute",
+            "dept": "Sales",
+            "role": "Manager"
+        },
+        "glewis@dundlermifflin.com": {
+            "name": "Gabe Lewis",
+            "dept": "C-LEVEL",
+            "role": "CEO"
+        }
+    },
+    "balance": {
+        "jimhelpert@dundlermifflin.com": 500,
+        "schurute@dundlermifflin.com": 100,
+        "glewis@dundlermifflin.com": 100
+    },
+    "movement": {
+        "jimhelpert@dundlermifflin.com": [
+            {
+                "date": "2025-10-09T14:14:18.255380",
+                "actor": "system",
+                "value": 500
+            }
+        ],
+        "schurute@dundlermifflin.com": [
+            {
+                "date": "2025-10-09T14:14:18.256942",
+                "actor": "system",
+                "value": 100
+            }
+        ],
+        "glewis@dundlermifflin.com": [
+            {
+                "date": "2025-10-09T14:14:18.257181",
+                "actor": "system",
+                "value": 100
+            }
+        ]
+    },
+    "users": {
+        "jimhelpert@dundlermifflin.com": {
+            "password": "4pKbXazv"
+        },
+        "schurute@dundlermifflin.com": {
+            "password": "4MdH3G5W"
+        },
+        "glewis@dundlermifflin.com": {
+            "password": "YdGzZjQl"
+        }
+    }
+}
