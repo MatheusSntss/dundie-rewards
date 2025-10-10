@@ -38,6 +38,7 @@ def main():
 @main.command
 @click.argument("filepath", type=click.Path(exists=True))
 def load(filepath):
+    """Loads the file to the database."""
     table = Table(title="Dunder Mifflin Associates")
     headers = ["name", "dept", "role", "created", "e-mail"]
     for header in headers:
@@ -89,6 +90,6 @@ def add(ctx, value, **query):
 @click.option("--email", required=False)
 @click.pass_context
 def remove(ctx, value, **query):
-    """Add point to the user or dept"""
+    """Remove point to the user or dept"""
     core.add(-value, **query)
     ctx.invoke(show, **query)
